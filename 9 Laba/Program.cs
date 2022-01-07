@@ -12,17 +12,18 @@ namespace _9_Laba
         {
             Console.WriteLine("Вас приветствует калькулятор!");
             Console.WriteLine("Введите целое число");
-            double a = 0; double b = 0;
+            int a = 0; int b = 0;
             try
             {
-                 a = Convert.ToInt32(Console.ReadLine());
+                a = Convert.ToInt32(Console.ReadLine());
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+
             }
-            
-            
+
+
             Console.WriteLine("Введите целое число");
             try
             {
@@ -32,30 +33,30 @@ namespace _9_Laba
             {
                 Console.WriteLine(ex.Message);
             }
-            
-            
-             
+
+
+
             Console.WriteLine("Введите код операции:");
             Console.WriteLine("\t 1 - сложение\n\t 2 - вычитание\n\t 3 - умножение\n\t 4 - частное");
-            double c = Convert.ToInt32(Console.ReadLine());
+            int c = Convert.ToInt32(Console.ReadLine());
             try
             {
 
                 switch (c)
                 {
                     case 1:
-                        Console.WriteLine("Ваш выбор {0}", (double)a + b);
+                        Console.WriteLine("Ваш выбор {0}", a + b);
                         break;
                     case 2:
 
-                        Console.WriteLine("Ваш выбор {0}", (double)a - b);
+                        Console.WriteLine("Ваш выбор {0}", a - b);
                         break;
                     case 3:
 
-                        Console.WriteLine("Ваш выбор {0}", (double)a * b);
+                        Console.WriteLine("Ваш выбор {0}", a * b);
                         break;
                     case 4:
-                        Console.WriteLine("Ваш выбор {0}", (double)a / b);
+                        c = a / b;
                         break;
                     default:
                         Console.WriteLine("Введено неверное значение");
@@ -64,9 +65,13 @@ namespace _9_Laba
             }
             catch
             {
-                Console.WriteLine("Ошибка");
+                Console.WriteLine("Ошибка!");
             }
-
+            if (b > 0 || b < 0)
+            {
+                Console.WriteLine("Ваш выбор {0}", (double)a/b);
+            }
+            Console.ReadKey();
 
             //double result1 = 0;
 
@@ -114,7 +119,7 @@ namespace _9_Laba
             //}
 
 
-            Console.ReadKey();
+
         }
     }
 }
